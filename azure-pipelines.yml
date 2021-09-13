@@ -3,53 +3,54 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
-stages:
-  - stage: 'Stage One' 
-
 trigger:
   - main
-  
+
+stages:
+    - stage: A
 pool:
-  vmImage: 'windows-latest'
-  
-  variables:
+    vmImage: 'windows-latest'
+    
+variables:
     solution: '**/*.sln'
     buildPlatform: 'Any CPU'
     buildConfiguration: 'Release'
   
-  steps:
-  - task: NuGetToolInstaller@1
-  
-  - task: NuGetCommand@2
-    inputs:
-      restoreSolution: '$(solution)'
-  
-  - task: SonarCloudPrepare@1
-    displayName: 'SonarQube - Prepare analysis configuration'
-    inputs:
-      SonarCloud: 'SonarQube'
-      organization: 'willmacaulay'
-      projectKey: 'WillMacaulay_myApp1'
-      projectName: 'WillMacaulay_myApp1'
-  
-  - task: VSBuild@1
-    inputs:
-      solution: '$(solution)'
-      platform: '$(buildPlatform)'
-      configuration: '$(buildConfiguration)'
-  
-  - task: VSTest@2
-    inputs:
-      platform: '$(buildPlatform)'
-      configuration: '$(buildConfiguration)'
-  
-  - task: SonarCloudAnalyze@1
-    displayName: 'Run SonarCloud analysis'
-  
-  - task: SonarCloudPublish@1
-    displayName: 'Publish results on build summary'
-  
-  - task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: drop
+    jobs:
+    - job: A1
+      steps:
+            - task: NuGetToolInstaller@1
+            
+            - task: NuGetCommand@2
+              inputs:
+                restoreSolution: '$(solution)'
+            
+            - task: SonarCloudPrepare@1
+              displayName: 'SonarQube - Prepare analysis configuration'
+              inputs:
+                SonarCloud: 'SonarQube'
+                organization: 'willmacaulay'
+                projectKey: 'WillMacaulay_myApp1'
+                projectName: 'WillMacaulay_myApp1'
+            
+            - task: VSBuild@1
+              inputs:
+                solution: '$(solution)'
+                platform: '$(buildPlatform)'
+                configuration: '$(buildConfiguration)'
+          
+            - task: VSTest@2
+              inputs:
+                platform: '$(buildPlatform)'
+                configuration: '$(buildConfiguration)'
+            
+            - task: SonarCloudAnalyze@1
+              displayName: 'Run SonarCloud analysis'
+            
+            - task: SonarCloudPublish@1
+              displayName: 'Publish results on build summary'
+          
+            - task: PublishBuildArtifacts@1
+              inputs:
+              pathToPublish: '$(Build.ArtifactStagingDirectory)'
+              artifactName: drop
