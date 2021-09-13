@@ -46,3 +46,8 @@ pool:
     displayName: 'Publish results on build summary'
     inputs:
       pollingTimeoutSec: '300'
+
+  - task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop
