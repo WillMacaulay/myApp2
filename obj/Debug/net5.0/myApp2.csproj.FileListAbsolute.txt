@@ -1,0 +1,16 @@
+C:\DevOps\myApp2\bin\Debug\net5.0\myApp2.exe
+C:\DevOps\myApp2\bin\Debug\net5.0\myApp2.deps.json
+C:\DevOps\myApp2\bin\Debug\net5.0\myApp2.runtimeconfig.json
+C:\DevOps\myApp2\bin\Debug\net5.0\myApp2.runtimeconfig.dev.json
+C:\DevOps\myApp2\bin\Debug\net5.0\myApp2.dll
+C:\DevOps\myApp2\bin\Debug\net5.0\ref\myApp2.dll
+C:\DevOps\myApp2\bin\Debug\net5.0\myApp2.pdb
+C:\DevOps\myApp2\obj\Debug\net5.0\myApp2.csproj.AssemblyReference.cache
+C:\DevOps\myApp2\obj\Debug\net5.0\myApp2.GeneratedMSBuildEditorConfig.editorconfig
+C:\DevOps\myApp2\obj\Debug\net5.0\myApp2.AssemblyInfoInputs.cache
+C:\DevOps\myApp2\obj\Debug\net5.0\myApp2.AssemblyInfo.cs
+C:\DevOps\myApp2\obj\Debug\net5.0\myApp2.csproj.CoreCompileInputs.cache
+C:\DevOps\myApp2\obj\Debug\net5.0\myApp2.dll
+C:\DevOps\myApp2\obj\Debug\net5.0\ref\myApp2.dll
+C:\DevOps\myApp2\obj\Debug\net5.0\myApp2.pdb
+C:\DevOps\myApp2\obj\Debug\net5.0\myApp2.genruntimeconfig.cache
