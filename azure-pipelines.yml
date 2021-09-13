@@ -32,8 +32,8 @@ stages:
           inputs:
             SonarCloud: 'SonarQube'
             organization: 'willmacaulay'
-            projectKey: 'WillMacaulay_myApp1'
-            projectName: 'WillMacaulay_myApp1'
+            projectKey: 'WillMacaulay_myApp2'
+            projectName: 'WillMacaulay_myApp2'
             
         - task: VSBuild@1
           inputs:
