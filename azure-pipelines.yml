@@ -3,8 +3,12 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
+stages:
+  - stage: 'Stage One' 
+
 trigger:
-- main
+  - main
+  
 pool:
   vmImage: 'windows-latest'
   
@@ -25,8 +29,8 @@ pool:
     inputs:
       SonarCloud: 'SonarQube'
       organization: 'willmacaulay'
-      projectKey: 'WillMacaulay_myApp2'
-      projectName: 'WillMacaulay_myApp2'
+      projectKey: 'WillMacaulay_myApp1'
+      projectName: 'WillMacaulay_myApp1'
   
   - task: VSBuild@1
     inputs:
@@ -44,9 +48,7 @@ pool:
   
   - task: SonarCloudPublish@1
     displayName: 'Publish results on build summary'
-    inputs:
-      pollingTimeoutSec: '300'
-
+  
   - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: '$(Build.ArtifactStagingDirectory)'
