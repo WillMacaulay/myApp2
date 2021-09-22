@@ -3,4 +3,3 @@ sonar.organization=willmacaulay
 sonar.projectKey=WillMacaulay_myApp2
 sonar.projectName=WillMacaulay_myApp2
 sonar.host.url=https://sonarcloud.io
-sonar.login=be65f1095af41a92459914c8666c287ed64e287c
